@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - trap
+  - coin
+  - coin2
+  - coin3
   layers:
   - Default
   - TransparentFX
