@@ -56,18 +56,5 @@ public class movement : MonoBehaviour
             anim.SetBool("jumping", false);
             anim.SetBool("fall", false);
         }
-
-        if (Input.GetKeyDown("q") && dash_cd == 0)
-        {
-            dash_cd = 200;
-            Debug.Log(direction);
-            rb.velocity = new Vector3(direction * 20, rb.velocity.y, 0);
-
-        }
-        if (dash_cd != 0)
-        {
-            dash_cd--;
-            Debug.Log(dash_cd);
-        }
     }
 }
