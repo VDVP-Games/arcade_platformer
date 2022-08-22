@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class triggers : MonoBehaviour
 {
-    Rigidbody2D rb;
+
+
+    private Rigidbody2D rb;
     private Animator anim;
     int cd = 0;
     bool enter = false;
@@ -32,7 +34,7 @@ public class triggers : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKeyDown("f")) && cd == 0 && enter)
+        if ((Input.GetKeyDown("f")) && cd == 0 && enter && !(anim.GetBool("active")))
         {
             cd += 200;
             Debug.Log(!(anim.GetBool("active")));
