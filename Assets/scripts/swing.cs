@@ -29,6 +29,10 @@ public class swing : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("node"))
         {
+            if(nodes.Count==0)
+            {
+                node = collision.gameObject;
+            }
             enter = true;
             nodes.Add(collision.gameObject);
             collision.gameObject.GetComponent<Animator>().SetBool("active",true);
@@ -37,7 +41,8 @@ public class swing : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("node")&&node==collision.gameObject)
+        Debug.Log("1");
+        if(collision.gameObject.CompareTag("node"))
         {
             nodes.Remove(collision.gameObject);
             collision.gameObject.GetComponent<Animator>().SetBool("active", false);
@@ -47,14 +52,19 @@ public class swing : MonoBehaviour
 
     private void Update()
     {
-        if (nodes.Count)
+        if (nodes.Count!=0 && !Input.GetKey("l"))
         {
             for (int i = 0; i < nodes.Count; i++)
             {
-                            
+                if(Vector2.Distance(nodes[i].transform.position,rb.transform.position)< Vector2.Distance(node.transform.position,rb.transform.position))
+                {
+                    node.GetComponent<Animator>().SetBool("active", false);
+                    nodes[i].GetComponent<Animator>().SetBool("active", true);
+                    node = nodes[i];
+                }
             }
         }
-        if (Input.GetKey("l") && enter)
+        if (Input.GetKey("l") && nodes.Count!=0)
         {
             rb.gravityScale = 0;
             rb.AddForce(new Vector3(0, -6, 0),ForceMode2D.Force);
