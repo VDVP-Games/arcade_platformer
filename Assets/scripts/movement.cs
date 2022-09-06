@@ -8,33 +8,29 @@ public class movement : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    SpriteRenderer spr;
 
-    int dash_cd = 0;
-    int direction = 1;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float Axis = Input.GetAxis("Horizontal");
-        if (Axis < 0 && dash_cd == 0)
+        if (Axis < 0 && !Input.GetKey("l"))
         {
             anim.SetBool("running", true);
-            transform.localScale = new Vector3(-1, 1, 1);
+            spr.flipX = true;
             rb.velocity = new Vector2(Axis * 7, rb.velocity.y);
-            direction = -1;
         }
-        else if (Axis > 0 && dash_cd == 0)
+        else if (Axis > 0 && !Input.GetKey("l"))
         {
             anim.SetBool("running", true);
-            transform.localScale = new Vector3(1, 1, 1);
+            spr.flipX = false;
             rb.velocity = new Vector2(Axis * 7, rb.velocity.y);
-            direction = 1;
         }
         else
         {
