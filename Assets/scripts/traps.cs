@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class traps : MonoBehaviour
 {
+    int anim_cd;
     Rigidbody2D rb;
     Animator anim;
     
@@ -25,6 +26,11 @@ public class traps : MonoBehaviour
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("death");        
+    }
+
+    private void Restart()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

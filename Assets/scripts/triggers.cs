@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class triggers : MonoBehaviour
 {
-
-
     private Rigidbody2D rb;
     private Animator anim;
     int cd = 0;
@@ -42,7 +40,6 @@ public class triggers : MonoBehaviour
         }
         if (cd!=0)
         {
-            Debug.Log(cd);
             cd--;
         }
     }
