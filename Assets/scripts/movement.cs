@@ -1,7 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System;
 using System.Timers;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -52,5 +53,6 @@ public class movement : MonoBehaviour
             anim.SetBool("jumping", false);
             anim.SetBool("fall", false);
         }
+
     }
 }
