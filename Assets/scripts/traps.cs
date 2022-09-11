@@ -26,11 +26,15 @@ public class traps : MonoBehaviour
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("death");        
+        anim.SetTrigger("death");  
+        
     }
 
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetInt("c1", 0);
+        PlayerPrefs.SetInt("c2", 0);
+        PlayerPrefs.SetInt("c3", 0);
     }
 }

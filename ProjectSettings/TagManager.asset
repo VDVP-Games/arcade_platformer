@@ -10,6 +10,7 @@ TagManager:
   - coin3
   - trigger
   - node
+  - End
   layers:
   - Default
   - TransparentFX

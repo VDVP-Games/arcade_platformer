@@ -15,10 +15,16 @@ public class Levels : MonoBehaviour
         int coins = PlayerPrefs.GetInt("coins");
         coinsText.text = coins.ToString();
         Debug.Log(coins);
+        PlayerPrefs.SetInt("time_coins", 0);
+        PlayerPrefs.SetInt("c1", 0);
+        PlayerPrefs.SetInt("c2", 0);
+        PlayerPrefs.SetInt("c3", 0);
+        Debug.Log(PlayerPrefs.GetInt("time_coins"));
     }
 
     public void Level_1()
     {
+        PlayerPrefs.SetInt("time_coins", PlayerPrefs.GetInt("coins1"));
         int coins = PlayerPrefs.GetInt("coins");
         if (coins >= 0){
             SceneManager.LoadScene(1);// загружать сцену по индексу
