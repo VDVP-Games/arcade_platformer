@@ -70,8 +70,8 @@ public class swing : MonoBehaviour
             rb.AddForce(new Vector3(0, -6, 0),ForceMode2D.Force);
             hook.enabled = true;
             line.enabled = true;
-            line.SetPosition(1, new Vector3(node.transform.position.x - rb.transform.position.x, node.transform.position.y - rb.transform.position.y));
-            hook.connectedAnchor = new Vector2(node.transform.position.x, node.transform.position.y);
+            line.SetPosition(1, new Vector3(node.transform.position.x - rb.transform.position.x, node.transform
+                .position.y - rb.transform.position.y, (float)1));
             float Axis = Input.GetAxis("Horizontal");
             if (Axis > 0)
             {

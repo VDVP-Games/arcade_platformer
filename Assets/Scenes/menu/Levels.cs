@@ -11,7 +11,7 @@ public class Levels : MonoBehaviour
 
     private void Start()
     {
-       
+        //PlayerPrefs.SetInt("coins1", 0);
         int coins = PlayerPrefs.GetInt("coins");
         coinsText.text = coins.ToString();
         Debug.Log(coins);
@@ -20,6 +20,7 @@ public class Levels : MonoBehaviour
         PlayerPrefs.SetInt("c2", 0);
         PlayerPrefs.SetInt("c3", 0);
         Debug.Log(PlayerPrefs.GetInt("time_coins"));
+        Time.timeScale = 1f;
     }
 
     public void Level_1()

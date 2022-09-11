@@ -50,6 +50,7 @@ public class Pause_menu : MonoBehaviour
     public void Level_exit()
     {
         Debug.Log(PlayerPrefs.GetInt("time_coins"));
+
         PlayerPrefs.SetInt("time_coins", 0);
         PlayerPrefs.SetInt("c1", 0);
         PlayerPrefs.SetInt("c2", 0);
