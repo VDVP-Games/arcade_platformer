@@ -821,8 +821,9 @@ GameObject:
   - component: {fileID: 524413361}
   - component: {fileID: 524413360}
   - component: {fileID: 524413364}
-  - component: {fileID: 524413366}
   - component: {fileID: 524413365}
+  - component: {fileID: 524413366}
+  - component: {fileID: 524413367}
   m_Layer: 5
   m_Name: Pause_canvas
   m_TagString: Untagged
@@ -937,8 +938,8 @@ AudioSource:
   m_GameObject: {fileID: 524413359}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 811a57a6493cd454eb957474a8af246d, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 49bc87634a5cd26459fdaa51bcc71745, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 48036c93eaadaf54682b47c0e9a025b1, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 0c60be1bbe5c03c418e1cf6efb818316, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1033,10 +1034,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 524413359}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493476cf97a67c74eafcfd3ecc9c78af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 6f67569aeaf362441992ceb397b30e92, type: 2}
+--- !u!114 &524413367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524413359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6951c934b649ccc41aa56f29d2a72c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 811a57a6493cd454eb957474a8af246d, type: 2}
+  audioMixer: {fileID: 24100000, guid: 48036c93eaadaf54682b47c0e9a025b1, type: 2}
 --- !u!1 &596649768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1146,6 @@ RectTransform:
   - {fileID: 1919502581}
   - {fileID: 1834807153}
   - {fileID: 9024049}
-  - {fileID: 2016433547}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1159,7 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 2016433548}
-  Inventory_Canvas: {fileID: 596649774}
+  Inventory_Canvas: {fileID: 596649768}
 --- !u!1 &617949835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,8 +1396,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000095367, y: 59.57257}
-  m_SizeDelta: {x: 149.8954, y: 67.668}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 75.92993}
+  m_SizeDelta: {x: 310.0625, y: 143.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &832149745
 MonoBehaviour:
@@ -1577,7 +1590,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 524413366}
+      - m_Target: {fileID: 524413367}
         m_TargetAssemblyTypeName: OptionMenu, Assembly-CSharp
         m_MethodName: Sound
         m_Mode: 1
@@ -9276,8 +9289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5682, y: -30.7178}
-  m_SizeDelta: {x: 146.76, y: 69.4355}
+  m_AnchoredPosition: {x: -0.000022888, y: -98}
+  m_SizeDelta: {x: 316.8685, y: 147.8621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1348196909
 MonoBehaviour:
@@ -9777,7 +9790,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2016433547}
   m_Father: {fileID: 596649775}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10091,12 +10105,12 @@ RectTransform:
   m_LocalScale: {x: 0.47292, y: 0.47292, z: 0.47292}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 596649775}
-  m_RootOrder: 3
+  m_Father: {fileID: 1834807153}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 471, y: -249}
+  m_AnchoredPosition: {x: 186, y: -95}
   m_SizeDelta: {x: 643.6336, y: 137.8932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2016433548
@@ -10400,7 +10414,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 524413366}
+      - m_Target: {fileID: 524413367}
         m_TargetAssemblyTypeName: OptionMenu, Assembly-CSharp
         m_MethodName: SetVolue
         m_Mode: 0
