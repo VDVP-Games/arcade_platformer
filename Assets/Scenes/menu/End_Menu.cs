@@ -40,7 +40,7 @@ public class End_Menu : MonoBehaviour
             Debug.Log(PlayerPrefs.GetInt("coins"));
             PlayerPrefs.SetInt(str,lcoins);
 
-            coinsText.text = "Collect money " + lcoins.ToString() + " / 3";
+            coinsText.text = "Collected coins " + lcoins.ToString() + " / 3";
             Inventory_Canvas.enabled = !Inventory_Canvas.enabled;
 
             PlayerPrefs.SetInt("time_coins", 0);
