@@ -21,7 +21,7 @@ public class End_Menu : MonoBehaviour
         {
             Time.timeScale = 0f;
             Debug.Log("end");
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+           // GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
             int coins = PlayerPrefs.GetInt("c1") + PlayerPrefs.GetInt("c2") + PlayerPrefs.GetInt("c3");
             
@@ -40,7 +40,7 @@ public class End_Menu : MonoBehaviour
             Debug.Log(PlayerPrefs.GetInt("coins"));
             PlayerPrefs.SetInt(str,lcoins);
 
-            coinsText.text = lcoins.ToString() + " / 3";
+            coinsText.text = "Collect money " + lcoins.ToString() + " / 3";
             Inventory_Canvas.enabled = !Inventory_Canvas.enabled;
 
             PlayerPrefs.SetInt("time_coins", 0);

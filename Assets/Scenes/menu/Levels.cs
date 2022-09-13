@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class Levels : MonoBehaviour
 {
     public Text coinsText;
+    public Text coinsText_n;
     //public int coin;
 
     private void Start()
     {
+        
         //PlayerPrefs.SetInt("coins1", 0);
         int coins = PlayerPrefs.GetInt("coins");
         coinsText.text = coins.ToString();
@@ -23,6 +25,12 @@ public class Levels : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    void Update()
+    {
+        
+    }
+
+
     public void Level_1()
     {
         PlayerPrefs.SetInt("time_coins", PlayerPrefs.GetInt("coins1"));
@@ -32,6 +40,7 @@ public class Levels : MonoBehaviour
      
            // PlayerPrefs.SetInt("coins", coins);
         }
+        
         Debug.Log(coins);
     }
 
@@ -41,6 +50,11 @@ public class Levels : MonoBehaviour
         if (coins >= 2)
         {
             SceneManager.LoadScene(2);// загружать сцену по индексу
+        }
+        else
+        {
+            coins = 2 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
         }
         Debug.Log(coins);
     }
@@ -52,6 +66,12 @@ public class Levels : MonoBehaviour
         {
             SceneManager.LoadScene(3);// загружать сцену по индексу
         }
+        else
+        {
+            coins = 4 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
+        }
         Debug.Log(coins);
     }
 
@@ -61,6 +81,12 @@ public class Levels : MonoBehaviour
         if (coins >= 7)
         {
             SceneManager.LoadScene(4);// загружать сцену по индексу
+        }
+        else
+        {
+            coins = 7 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
         }
         Debug.Log(coins);
     }
@@ -72,6 +98,12 @@ public class Levels : MonoBehaviour
         {
             SceneManager.LoadScene(5);// загружать сцену по индексу
         }
+        else
+        {
+            coins = 10 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
+        }
         Debug.Log(coins);
     }
 
@@ -81,6 +113,12 @@ public class Levels : MonoBehaviour
         if (coins >= 13)
         {
             SceneManager.LoadScene(6);// загружать сцену по индексу
+        }
+        else
+        {
+            coins = 13 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
         }
         Debug.Log(coins);
     }
@@ -92,6 +130,12 @@ public class Levels : MonoBehaviour
         {
             SceneManager.LoadScene(7);// загружать сцену по индексу
         }
+        else
+        {
+            coins = 16 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
+        }
         Debug.Log(coins);
     }
 
@@ -101,6 +145,12 @@ public class Levels : MonoBehaviour
         if (coins >= 19)
         {
             SceneManager.LoadScene(8);// загружать сцену по индексу
+        }
+        else
+        {
+            coins = 19 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
         }
         Debug.Log(coins);
     }
@@ -112,6 +162,12 @@ public class Levels : MonoBehaviour
         {
             SceneManager.LoadScene(9);// загружать сцену по индексу
         }
+        else
+        {
+            coins = 21 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
+        }
         Debug.Log(coins);
     }
 
@@ -122,26 +178,14 @@ public class Levels : MonoBehaviour
         {
             SceneManager.LoadScene(10);// загружать сцену по индексу
         }
-        Debug.Log(coins);
-    }
-
-    public void Level_11()
-    {
-        int coins = PlayerPrefs.GetInt("coins");
-        if (coins >= 27)
+        else
         {
-            SceneManager.LoadScene(11);// загружать сцену по индексу
+            coins = 24 - coins;
+            coinsText_n.text = "Not enough coins : " + coins.ToString();
+            Update();
         }
         Debug.Log(coins);
     }
 
-    public void Level_12()
-    {
-        int coins = PlayerPrefs.GetInt("coins");
-        if (coins >= 30)
-        {
-            SceneManager.LoadScene(12);// загружать сцену по индексу
-        }
-        Debug.Log(coins);
-    }
+    
 }
